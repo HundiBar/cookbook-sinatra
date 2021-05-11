@@ -1,0 +1,13 @@
+<a href="/new" >Create a new recipe!</a>
+
+<% if @recipe_name && @recipe_description %>
+  <h1>You added -  <%= "#{@recipe_name}: #{@recipe_description}" %>!</h1>
+<% end %>
+
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <li>
+      <%= "#{index + 1} - #{recipe}" %> <a href ="/">Destroy!</a>
+    </li>
+  <% end %>
+</ul>
